@@ -22,12 +22,19 @@ console.log(getRandomQuotes);
 const quote = document.querySelector("#quote");
 const button = document.querySelector("#btn-random");
 
-button.addEventListener("click", () => {
+button.addEventListener("click", (e) => {
   quote.textContent = getRandomQuotes;
+  button.style.backgroundColor = "coral";
+  button.style.color = "white";
+  if (button.style.backgroundColor === "coral") {
+    setInterval(() => {
+      window.location.reload();
+    }, 10000);
+  }
 });
 
 button.style.padding = "3rem";
-button.style.color = "coral";
-button.style.fontSize = "2.5rem";
+button.style.color = "black";
+button.style.fontSize = "2rem";
 button.style.backgroundColor = "rgb(164, 224, 164)";
 button.style.border = "none";
